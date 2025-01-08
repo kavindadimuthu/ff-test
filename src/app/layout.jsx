@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google'
 import Header from '../components/header'
+import { Analytics } from "@vercel/analytics/react"
 import '@/styles/globals.css'
 import '@/styles/custom-scroll.css'
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
     (<html lang="en" className="dark">
       <body className={`${inter.className} min-h-screen bg-black text-white`}>
         <Header />
+        <Analytics/>
         {children}
       </body>
     </html>)

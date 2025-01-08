@@ -9,6 +9,8 @@ import { Label } from "@/components/ui/label"
 import { Slider } from "@/components/ui/slider"
 import { Play } from 'lucide-react'
 import { avatars, clothing } from '../../data/index'
+import { MergedModel } from '@/assets/avatar/Male-with-tshirt'
+import Link from 'next/link'
 
 export default function Page() {
   const selectedAvatar = avatars[0];
@@ -59,10 +61,11 @@ export default function Page() {
             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
             <pointLight position={[-10, -10, -10]} />
             
-            <mesh>
+            <MergedModel />
+            {/* <mesh>
               <boxGeometry args={[1, 2, 1]} />
               <meshStandardMaterial color="white" />
-            </mesh>
+            </mesh> */}
             
             <OrbitControls />
             <Environment preset="studio" />
@@ -109,9 +112,11 @@ export default function Page() {
             </Button>
             
           </div>
-          <Button variant="secondary">
+          <Link href="/order-confirmed">
+          <Button variant="secondary" className="w-full">
               Place order
           </Button>
+          </Link>
         </div>
       </div>
     </div>)
